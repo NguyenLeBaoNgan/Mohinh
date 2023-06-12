@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>List NSX</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/product/view}">Home</a>
+    <!--    <a class="navbar-brand" th:href="@{/product/view}">Quan ly danh muc</a>-->
+    <a class="navbar-brand" th:href="@{/product/list}">Quan ly sp</a>
+  </div>
+</nav>
+<div class="container">
+  <h1>List NSX</h1>
+  <a th:href="@{/product/addNSX}" class="btn btn-primary btn-sm mb-3">Add New NSX</a>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>DiaChi</th>
+      <th>SDT</th>
+      <th>Mail</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="nsx : ${nsxList}">
+      <td th:text="${nsx.idnsx}"></td>
+      <td th:text="${nsx?.tennsx}"></td>
+      <td th:text="${nsx?.diachinsx}"></td>
+      <td th:text="${nsx?.sdtnsx}"></td>
+      <td th:text="${nsx?.mail}"></td>
+      <td>
+        <a th:href="@{/product/editNSX/{idnsx}(idnsx=${nsx.idnsx})}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/product/deleteNSX/{idnsx}(idnsx=${nsx.idnsx})}"
+           onclick="deleteNSX(this); return false;" class="btn btn-danger">Delete</a>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

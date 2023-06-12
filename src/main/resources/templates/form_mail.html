@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Send Email</title>
+</head>
+
+<body>
+<div class="container">
+    <h1>Send Email</h1>
+    <form action="/send" method="post">
+        <div class="form-group">
+            <label for="to">To:</label>
+            <input type="email" class="form-control" id="to" name="to" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+            <label for="text">Message:</label>
+            <textarea class="form-control" id="text" name="text" rows="5" required value="*{total}" th:text="*{total}"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" name="action" value="textmail">Send text mail</button>
+        <button type="submit" class="btn btn-primary" name="action" value="htmlmail">Send html mail</button>
+
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

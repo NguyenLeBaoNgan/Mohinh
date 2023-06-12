@@ -21,6 +21,6 @@ public class NSX {
 
     private String mail;
 
-    @OneToMany(mappedBy = "nsx")
-    private List<CTSP> ctspList;
+    @OneToMany(mappedBy = "nsx", cascade = CascadeType.ALL)
+    private List<Product> products;
 }

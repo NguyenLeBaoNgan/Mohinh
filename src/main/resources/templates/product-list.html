@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/product/view}">Home</a>
+    <a class="navbar-brand" th:href="@{/product/listdanhmuc}">Quan ly the loai</a>
+    <a class="navbar-brand" th:href="@{/product/listnsx}">Quan ly nsx</a>
+<!--    <a class="navbar-brand" th:href="@{/product/view}">Quan ly the loai</a>-->
+  </div>
+</nav>
+<div class="container">
+  <h1>Product List</h1>
+  <a th:href="@{/product/add}" class="btn btn-primary btn-sm mb-3">Add New Product</a>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Image</th>
+      <th>Discount</th>
+      <th>Category</th>
+      <th>NSX</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${productList}">
+      <td th:text="${product.idsp}"></td>
+      <td th:text="${product.tensp}"></td>
+      <td th:text="${product.price}"></td>
+      <td th:text="${product.soluong}"></td>
+      <td><img th:src="${product.image}" /></td>
+      <td th:text="${product.giamgia?.tengiamgia}"></td>
+      <td th:text="${product.theloai?.tentheloai}"></td>
+      <td th:text="${product.nsx?.tennsx}"></td>
+      <td>
+        <a th:href="@{/product/edit/{idsp}(idsp=${product.idsp})}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/product/delete/{idsp}(idsp=${product.idsp})}"
+           onclick="deleteProduct(this); return false;" class="btn btn-danger">Delete</a>
+        <a th:href="@{/shoppingcart/add/{id}(id=${product.idsp})}" class="btn btn-success">Buy now</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

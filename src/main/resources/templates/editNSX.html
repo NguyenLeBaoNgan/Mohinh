@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>EDIT NSX</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+  <h1>Edit NSX</h1>
+  <form method="post" th:action="@{'/product/updateNSX/' + ${nsx.idnsx}}">
+
+    <label for="tennsx">Name:</label>
+    <input type="text" id="tennsx" name="tennsx" th:value="${nsx.tennsx}" required>
+    <br>
+    <label for="diachinsx">DiaChi:</label>
+    <input type="text" id="diachinsx" name="diachinsx" th:value="${nsx.diachinsx}" required>
+    <br>
+    <label for="sdtnsx">SDT:</label>
+    <input type="text" id="sdtnsx" name="sdtnsx" th:value="${nsx.sdtnsx}" required>
+    <br>
+    <label for="mail">Email:</label>
+    <input type="text" id="mail" name="mail" th:value="${nsx.mail}" required>
+    <br>
+
+    <input type="submit" value="Edit NSX" class="btn-submit">
+  </form>
+</div>
+</body>
+</html>

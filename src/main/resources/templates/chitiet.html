@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>KT Computer Store</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta property="og:title" content="Vide" />
+    <meta name="keyword" content="123, 1, 55" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+
+    <link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+    <!-- js -->
+    <script th:src="@{/js/jquery-1.11.1.min.js}"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" th:src="@{/js/move-top.js}"></script>
+    <script type="text/javascript" th:src="@{/js/easing.js}"></script>
+    <script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+    <!-- start-smoth-scrolling -->
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!--- start-rate---->
+    <script th:src="@{/js/jstarbox.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/jstarbox.css}" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript">
+			jQuery(function() {
+			jQuery('.starbox').each(function() {
+				var starbox = jQuery(this);
+					starbox.starbox({
+					average: starbox.attr('data-start-value'),
+					changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+					ghosting: starbox.hasClass('ghosting'),
+					autoUpdateAverage: starbox.hasClass('autoupdate'),
+					buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+					stars: starbox.attr('data-star-count') || 5
+					}).bind('starbox-value-changed', function(event, value) {
+					if(starbox.hasClass('random')) {
+					var val = Math.random();
+					starbox.next().text(' '+val);
+					return val;
+					}
+				})
+			});
+		});
+		</script>
+    <!---//End-rate---->
+
+</head>
+<div class="header">
+
+    <div class="container">
+
+        <div class="logo">
+            <h1 ><a href="index.html">SHOP MÔ HÌNH<span>ĐAM MÊ KHÔNG CHỈ Ở TRÊN MÀN ẢNH</span></a></h1>
+        </div>
+        <div class="head-t">
+            <ul class="card">
+                <li><a href="wishlist.html" ><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a></li>
+                <li><a href="login.html" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
+                <li><a href="register.html" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
+                <li><a th:href="@{//about}" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
+                <li><a href="shipping.html" ><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
+            </ul>
+        </div>
+
+        <div class="header-ri">
+            <ul class="social-top">
+                <li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
+                <li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
+                <li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
+                <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
+            </ul>
+        </div>
+
+
+        <div class="nav-top">
+            <nav class="navbar navbar-default">
+
+                <div class="navbar-header nav_2">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+
+                </div>
+                <h1>Product Details</h1>
+            </nav>
+            <div class="cart" >
+
+                <a th:href="@{/shoppingcart/view}"><span class="fa fa-shopping-cart my-cart-icon"></span></a>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<body>
+<div class="product-details">
+
+    <img th:src="${product.image}" class="product-image" alt="Product Image">
+    <div class="product-info">
+        <p><strong>Name:</strong> <span th:text="${product.tensp}"></span></p>
+        <p><strong>Price:</strong> <span th:text="${product.price}"></span></p>
+        <p><strong>Quantity:</strong> <span th:text="${product.soluong}"></span></p>
+        <p><strong>Category:</strong> <span th:text="${product.theloai.tentheloai}"></span></p>
+        <p><strong>NSX:</strong> <span th:text="${product.nsx.tennsx}"></span></p>
+        <p><strong>Mota:</strong> <span th:text="${product.mota}"></span></p>
+        <p><strong>chieucao:</strong> <span th:text="${product.chieucao}"></span></p>
+        <p><strong>Trongluong:</strong> <span th:text="${product.trongluong}"></span></p>
+    </div>
+    <div class="add">
+        <button class="btn btn-danger my-cart-btn my-cart-b" ><a th:href="@{/shoppingcart/add/{id}(id=${product.idsp})}">Add to Cart</a></button>
+    </div>
+</div>
+<div class="go-back-btn">
+    <a href="/product/view" class="btn">Go Back</a>
+</div>
+</body>
+</html>
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="col-md-3 footer-grid">
+            <h3>About Us</h3>
+            <p>SHOP MÔ HÌNH</p>
+        </div>
+        <div class="col-md-3 footer-grid ">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pccomponent.html">Danh mục</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3 footer-grid ">
+            <h3>Customer Services</h3>
+            <ul>
+                <li><a href="shipping.html">Shipping</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="offer.html">Online Shopping</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-3 footer-grid">
+            <h3>My Account</h3>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="footer-bottom">
+            <h2 ><a href="index.html">SHOP MÔ HÌNH<span>ĐAM MÊ KHÔNG CHỈ Ở TRÊN MÀN ẢNH</span></a></h2>
+            <p class="fo-para">MÔ HÌNH </p>
+            <ul class="social-fo">
+                <li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" class=" pin"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                <li><a href="#" class=" dri"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+            </ul>
+            <div class=" address">
+                <div class="col-md-4 fo-grid1">
+                    <p><i class="fa fa-home" aria-hidden="true"></i> Distrct 9, Hồ Chí Minh City.</p>
+                </div>
+                <div class="col-md-4 fo-grid1">
+                    <p><i class="fa fa-phone" aria-hidden="true"></i>+1234 567 890 , +0834 505 170</p>
+                </div>
+                <div class="col-md-4 fo-grid1">
+                    <p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>mohinh@gmail.com</a></p>
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //footer-->
+<style>
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-image {
+            width: 300px;
+        }
+
+        .product-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+        }
+
+        .go-back-btn {
+            margin-top: 20px;
+        }
+    </style>

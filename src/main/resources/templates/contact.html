@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-	<title>KT Computer Store</title>
+	<title>SHOP MÔ HÌNH</title>
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -65,13 +65,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="container">
 
 		<div class="logo">
-			<h1 ><a href="index.html"><b>T<br>H<br>E</b>KT Computer Store<span>Best Place For Building Your PC</span></a></h1>
+			<h1 ><a href="index.html"> SHOP MÔ HÌNH <span>ĐAM MÊ KHÔNG CHỈ Ở TRÊN MÀN ẢNH</span></a></h1>
 		</div>
 		<div class="head-t">
 			<ul class="card">
 				<li><a href="wishlist.html" ><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a></li>
-				<li><a href="login.html" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-				<li><a href="register.html" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
+				<li><a th:href="@{/login}" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
+				<li><a th:href="@{/register}" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
 				<li><a href="about.html" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
 				<li><a href="shipping.html" ><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
 			</ul>
@@ -102,140 +102,32 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav ">
-						<li ><a href="index.html" class="hyper "><span>Home</span></a></li>
+						<li ><a th:href="@{/product/view}" class="hyper "><span>Home</span></a></li>
 
 						<li  class="dropdown ">
-							<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>PC Component<b class="caret"></b></span></a>
+							<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Danh mục<b class="caret"></b></span></a>
 							<ul class="dropdown-menu multi">
 								<div class="row">
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
 
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Mainboard</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>CPU</a></li>
-											<li><a href="pccomponent.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>RAM</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>GPU</a></li>
+											<li th:each="theloai:${theLoaiList}">
+												<a th:text="${theloai.tentheloai}" th:href="@{/product/productbyidtl/{idtheloai}(idtheloai=${theloai.idtheloai})}">
+													<i class="fa fa-angle-right" aria-hidden="true"></i>
+												</a>
+											</li>
 
 										</ul>
 
 									</div>
-									<div class="col-sm-3">
 
-										<ul class="multi-column-dropdown">
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>SSD</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>HDD</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Power Supply</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>PC Case</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Fan/Liquid Cooling</a></li>
-
-										</ul>
-
-									</div>
-									<div class="col-sm-3">
-
-										<!--<ul class="multi-column-dropdown">
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pickle & Condiment</a></li>
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Instant Food</a></li>
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Dry Fruit</a></li>
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Tea &amp; Coffee</a></li>
-
-                                        </ul>-->
-									</div>
-									<div class="col-sm-3 w3l">
-										<a href="pccomponent.html"><img th:src="@{images/me.png}" class="img-responsive" alt=""></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-						</li>
-						<li class="dropdown">
-
-							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Gaming Gear<b class="caret"></b></span></a>
-							<ul class="dropdown-menu multi multi1">
-								<div class="row">
-									<div class="col-sm-3">
-										<ul class="multi-column-dropdown">
-											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Monitor</a></li>
-											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Keyboard</a></li>
-											<!--<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cosmetics</a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Deo & Purfumes</a></li>-->
-
-										</ul>
-
-									</div>
-									<div class="col-sm-3">
-
-										<ul class="multi-column-dropdown">
-											<li><a href="gaminggear.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Mouse</a></li>
-											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Headset</a></li>
-											<!--<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Personal Hygiene</a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>-->
-
-										</ul>
-
-									</div>
-									<div class="col-sm-3">
-
-										<!--<ul class="multi-column-dropdown">
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Fashion Accessories </a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Grooming Tools</a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shaving Need</a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sanitary Needs</a></li>
-
-                                        </ul>-->
-									</div>
-									<div class="col-sm-3 w3l">
-										<a href="gaminggear.html"><img th:src="@{images/me1.png}" class="img-responsive" alt=""></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Console<b class="caret"></b></span></a>
-							<ul class="dropdown-menu multi multi2">
-								<div class="row">
-									<div class="col-sm-3">
-										<ul class="multi-column-dropdown">
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>SONY Play Station 4<</a></li>
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>PS4 Controller</a></li>
-											<!--<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Detergents</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Gardening Needs</a></li>-->
-
-										</ul>
-
-									</div>
-									<div class="col-sm-3">
-
-										<ul class="multi-column-dropdown">
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Microsoft XBOX One</a></li>
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>XBOX Controller</a></li>
-											<!--<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pet Care</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Plastic Wear</a></li>-->
-
-										</ul>
-
-									</div>
-									<div class="col-sm-3">
-
-										<!--<ul class="multi-column-dropdown">
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pooja Needs</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Serveware</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Festive Decoratives </a></li>
-
-                                        </ul>-->
-									</div>
-									<div class="col-sm-3 w3l">
-										<a href="console.html"><img th:src="@{images/me2.png}" class="img-responsive" alt=""></a>
-									</div>
 									<div class="clearfix"></div>
 								</div>
 							</ul>
 						</li>
 
 						<!--<li ><a href="codes.html" class="hyper"> <span>Codes</span></a></li>-->
-						<li class="active"><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
+						<li class="active"><a th:href="@{/contact}" class="hyper"><span>Contact Us</span></a></li>
 					</ul>
 				</div>
 			</nav>
@@ -273,39 +165,39 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class=" contact-w3">
 			<div class="col-md-5 contact-right">
 				<img th:src="@{images/cac.jpg}" class="img-responsive" alt="">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5170327566943!2d106.70266431532937!3d10.771655992324748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f414519d1f9%3A0xc0bd40da46e38fe0!2zSOG6o2kgVHJp4buBdSwgQuG6v24gTmdow6ksIFF14bqtbiAxLCBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1575780551354!5m2!1sen!2s" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+<!--				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5170327566943!2d106.70266431532937!3d10.771655992324748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f414519d1f9%3A0xc0bd40da46e38fe0!2zSOG6o2kgVHJp4buBdSwgQuG6v24gTmdow6ksIFF14bqtbiAxLCBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1575780551354!5m2!1sen!2s" frameborder="0" style="border:0;" allowfullscreen=""></iframe>-->
 			</div>
 			<div class="col-md-7 contact-left">
 				<h4>Contact Information</h4>
-				<p>	KT Computer Store - Best place for buying Computer Components and Gaming Gears with a really low price.</p>
+				<p>Shop mô hình - Best place for buying anime model.</p>
 				<ul class="contact-list">
-					<li> <i class="fa fa-map-marker" aria-hidden="true"></i>Hải Triều, Bến Nghé, Distrct 1, Hồ Chí Minh City.</li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com">KTComputerStore@gmail.com</a></li>
-					<li> <i class="fa fa-phone" aria-hidden="true"></i>+1234 567 890 , +0919 113 114</li>
+					<li> <i class="fa fa-map-marker" aria-hidden="true"></i>Distrct 1, Hồ Chí Minh City.</li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com">mohinh@gmail.com</a></li>
+					<li> <i class="fa fa-phone" aria-hidden="true"></i>+1234 567 890 , +0834 505 170</li>
 				</ul>
 				<div id="container">
 					<!--Horizontal Tab-->
 					<div id="parentHorizontalTab">
 						<ul class="resp-tabs-list hor_1">
-							<li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+<!--							<li><i class="fa fa-envelope" aria-hidden="true"></i></li>-->
 							<li> <i class="fa fa-map-marker" aria-hidden="true"></i> </span></li>
 							<li> <i class="fa fa-phone" aria-hidden="true"></i></li>
 						</ul>
 						<div class="resp-tabs-container hor_1">
-							<div>
-								<form action="#" method="post">
-									<input type="text" value="Name" name="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-									<input type="email" value="Email" name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-									<textarea name="Message..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-									<input type="submit" value="Submit" >
-								</form>
-							</div>
+<!--							<div>-->
+<!--								<form action="#" method="post">-->
+<!--									<input type="text" value="Name" name="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">-->
+<!--									<input type="email" value="Email" name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">-->
+<!--									<textarea name="Message..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>-->
+<!--									<input type="submit" value="Submit" >-->
+<!--								</form>-->
+<!--							</div>-->
 							<div>
 								<div class="map-grid">
 									<h5>Our Branches</h5>
 									<ul>
-										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Hải Triều, Bến Nghé, Distrct 1, Hồ Chí Minh City.</li>
-										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Nguyễn Hữu Cảnh, Ward 22, Bình Thạnh District, Hồ Chí Minh City.</li>
+										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Distrct 9, Hồ Chí Minh City.</li>
+										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Bình Thạnh District, Hồ Chí Minh City.</li>
 										<!--<li><i class="fa fa-arrow-right" aria-hidden="true"></i>756 global Place, New York.</li>
 										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>889 diamond street, USA.</li>-->
 									</ul>
@@ -316,7 +208,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h5>Contact Me Through</h5>
 									<ul>
 										<li>Mobile No: +1234 567 890</li>
-										<li>Office No:  +0919 113 114</li>
+										<li>Office No: +0834 505 170</li>
 										<!--<li>Home No : +123 456 7890</li>
 										<li>Fax No : +123 456 7890</li>-->
 									</ul>
@@ -387,17 +279,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="container">
 		<div class="col-md-3 footer-grid">
 			<h3>About Us</h3>
-			<p>KT Computer Store - Best place for buying Computer Components and Gaming Gears with a really low price.</p>
+			<p>SHOP MÔ HÌNH - ĐAM MÊ KHÔNG CHỈ Ở TRÊN MÀN ẢNH</p>
 		</div>
 		<div class="col-md-3 footer-grid ">
 			<h3>Menu</h3>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="pccomponent.html">PC Component</a></li>
-				<li><a href="gaminggear.html">Gaming Gear</a></li>
-				<li><a href="console.html">Console</a></li>
-				<!-- <li><a href="codes.html">Short Codes</a></li> -->
-				<li><a href="contact.html">Contact Us</a></li>
+				<li><a th:href="@{/index}">Home</a></li>
+				<li><a th:href="@{pccomponent}">Danh mục </a></li>
+
+
+				<li><a th:href="@{/contact}">Contact Us</a></li>
 			</ul>
 		</div>
 		<div class="col-md-3 footer-grid ">
@@ -414,16 +305,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="col-md-3 footer-grid">
 			<h3>My Account</h3>
 			<ul>
-				<li><a href="login.html">Login</a></li>
-				<li><a href="register.html">Register</a></li>
+				<li><a th:href="@{/login}">Login</a></li>
+				<li><a th:href="@{register}">Register</a></li>
 				<li><a href="wishlist.html">Wishlist</a></li>
 
 			</ul>
 		</div>
 		<div class="clearfix"></div>
 		<div class="footer-bottom">
-			<h2 ><a href="index.html"><b>T<br>H<br>E</b>KT Computer Store<span>Best Place For Building Your PC</span></a></h2>
-			<p class="fo-para">KT Computer Store - Best place for buying Computer Components and Gaming Gears with a really low price.</p>
+			<h2 ><a href="index.html">SHOP MÔ HÌNH<span>ĐAM MÊ KHÔNG CHỈ Ở TRÊN MÀN ẢNH</span></a></h2>
+			<p class="fo-para">Shop mô hình - Best place for buying anime model.</p>
 			<ul class="social-fo">
 				<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 				<li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -432,13 +323,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</ul>
 			<div class=" address">
 				<div class="col-md-4 fo-grid1">
-					<p><i class="fa fa-home" aria-hidden="true"></i>Hải Triều, Bến Nghé, Distrct 1, Hồ Chí Minh City.</p>
+					<p><i class="fa fa-home" aria-hidden="true"></i>Distrct 9, Hồ Chí Minh City.</p>
 				</div>
 				<div class="col-md-4 fo-grid1">
-					<p><i class="fa fa-phone" aria-hidden="true"></i>+1234 567 890 , +0919 113 114</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i>+1234 567 890 , +08345 505 170</p>
 				</div>
 				<div class="col-md-4 fo-grid1">
-					<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>KTComputerStore@gmail.com</a></p>
+					<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>mohinh@gmail.com</a></p>
 				</div>
 				<div class="clearfix"></div>
 

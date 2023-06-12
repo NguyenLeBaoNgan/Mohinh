@@ -36,4 +36,13 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     private List<DonHang> donHangs;
 
+    @ManyToOne
+    @JoinColumn(name = "idnsx")
+    private NSX nsx;
+
+    private Integer chieucao;
+
+    private Float trongluong;
+
+    private String mota;
 }

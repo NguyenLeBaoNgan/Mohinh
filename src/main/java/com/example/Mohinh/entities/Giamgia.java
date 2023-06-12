@@ -15,6 +15,6 @@ public class Giamgia {
 
     private String tengiamgia;
 
-    @OneToMany(mappedBy = "giamgia")
+    @OneToMany(mappedBy = "giamgia", cascade = CascadeType.ALL)
     private List<Product> products;
 }

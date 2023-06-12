@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>List The loai</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/product/view}">Home</a>
+<!--    <a class="navbar-brand" th:href="@{/product/view}">Quan ly danh muc</a>-->
+    <a class="navbar-brand" th:href="@{/product/list}">Quan ly sp</a>
+  </div>
+</nav>
+<div class="container">
+  <h1>List The loai</h1>
+  <a th:href="@{/product/addTL}" class="btn btn-primary btn-sm mb-3">Add New TL</a>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>CategoryName</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="theloai : ${theloaiList}">
+      <td th:text="${theloai.idtheloai}"></td>
+      <td th:text="${theloai?.tentheloai}"></td>
+      <td>
+        <a th:href="@{/product/editTL/{idtheloai}(idtheloai=${theloai.idtheloai})}" class="btn btn-primary">Edit</a>
+        <a th:href="@{/product/deleteTL/{idtheloai}(idtheloai=${theloai.idtheloai})}"
+           onclick="deleteTheLoai(this); return false;" class="btn btn-danger">Delete</a>
+<!--        <a th:href="@{/shoppingcart/add/{id}(id=${product.idsp})}" class="btn btn-success">Buy now</a>-->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

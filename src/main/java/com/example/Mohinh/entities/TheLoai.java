@@ -15,6 +15,6 @@ public class TheLoai {
 
     private String tentheloai;
 
-    @OneToMany(mappedBy = "theloai")
+    @OneToMany(mappedBy = "theloai", cascade = CascadeType.ALL)
     private List<Product> products;
 }

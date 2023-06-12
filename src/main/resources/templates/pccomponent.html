@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-	<title>KT Computer Store</title>
+	<title>SHOP MÔ HÌNH</title>
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,15 +10,15 @@
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!-- //for-mobile-apps -->
-	<link th:href="@{css/bootstrap.css}" rel='stylesheet' type='text/css' />
+	<link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css' />
 	<!-- Custom Theme files -->
-	<link th:href="@{css/style.css}" rel='stylesheet' type='text/css' />
+	<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
 	<!-- js -->
-	<script th:src="@{js/jquery-1.11.1.min.js}"></script>
+	<script th:src="@{/js/jquery-1.11.1.min.js}"></script>
 	<!-- //js -->
 	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" th:src="@{js/move-top.js}"></script>
-	<script type="text/javascript" th:src="@{js/easing.js}"></script>
+	<script type="text/javascript" th:src="@{/js/move-top.js}"></script>
+	<script type="text/javascript" th:src="@{/js/easing.js}"></script>
 	<script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){
@@ -28,12 +28,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	});
 </script>
 	<!-- start-smoth-scrolling -->
-	<link th:href="@{css/font-awesome.css}" rel="stylesheet">
+	<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
 	<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
 	<!--- start-rate---->
-	<script th:src="@{js/jstarbox.js}"></script>
-	<link rel="stylesheet" th:href="@{css/jstarbox.css}" type="text/css" media="screen" charset="utf-8" />
+	<script th:src="@{/js/jstarbox.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/jstarbox.css}" type="text/css" media="screen" charset="utf-8" />
 	<script type="text/javascript">
 			jQuery(function() {
 			jQuery('.starbox').each(function() {
@@ -65,7 +65,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="container">
 
 		<div class="logo">
-			<h1 ><a href="index.html"><b>T<br>H<br>E</b>KT Computer Store<span>Best Place For Building Your PC</span></a></h1>
+			<h1 ><a href="index.html">SHOP MÔ HÌNH<span>ĐAM MÊ KHÔNG CHỈ Ở TRÊN MÀN ẢNH</span></a></h1>
 		</div>
 		<div class="head-t">
 			<ul class="card">
@@ -102,137 +102,117 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav ">
-						<li ><a href="index.html" class="hyper "><span>Home</span></a></li>
+						<li class=" active"><a th:href="@{/product/view}" class="hyper "><span>Home</span></a></li>
 
-						<li  class="dropdown active">
-							<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>PC Component<b class="caret"></b></span></a>
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Danh mục<b class="caret"></b></span></a>
 							<ul class="dropdown-menu multi">
 								<div class="row">
 									<div class="col-sm-3">
 										<ul class="multi-column-dropdown">
 
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Mainboard</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>CPU</a></li>
-											<li><a href="pccomponent.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>RAM</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>GPU</a></li>
+											<li th:each="theloai:${theLoaiList}">
+												<a th:text="${theloai.tentheloai}" th:href="@{/product/productbyidtl/{idtheloai}(idtheloai=${theloai.idtheloai})}">
+													<i class="fa fa-angle-right" aria-hidden="true"></i>
+												</a>
+											</li>
 
 										</ul>
 
 									</div>
-									<div class="col-sm-3">
 
-										<ul class="multi-column-dropdown">
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>SSD</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>HDD</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Power Supply</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>PC Case</a></li>
-											<li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Fan/Liquid Cooling</a></li>
-
-										</ul>
-
-									</div>
-									<div class="col-sm-3">
-
-										<!--<ul class="multi-column-dropdown">
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pickle & Condiment</a></li>
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Instant Food</a></li>
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Dry Fruit</a></li>
-                                            <li><a href="pccomponent.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Tea &amp; Coffee</a></li>
-
-                                        </ul>-->
-									</div>
-									<div class="col-sm-3 w3l">
-										<a href="pccomponent.html"><img th:src="@{images/me.png}" class="img-responsive" alt=""></a>
-									</div>
+									<!--									<div class="col-sm-3 w3l">-->
+									<!--										<a href="pccomponent.html"></a>-->
+									<!--									</div>-->
 									<div class="clearfix"></div>
 								</div>
 							</ul>
 						</li>
-						<li class="dropdown">
+<!--						<li class="dropdown">-->
 
-							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Gaming Gear<b class="caret"></b></span></a>
-							<ul class="dropdown-menu multi multi1">
-								<div class="row">
-									<div class="col-sm-3">
-										<ul class="multi-column-dropdown">
-											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Monitor</a></li>
-											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Keyboard</a></li>
-											<!--<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Mouse </a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Headset </a></li>-->
+<!--							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Gaming Gear<b class="caret"></b></span></a>-->
+<!--							<ul class="dropdown-menu multi multi1">-->
+<!--								<div class="row">-->
+<!--									<div class="col-sm-3">-->
+<!--										<ul class="multi-column-dropdown">-->
+<!--											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Monitor</a></li>-->
+<!--											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Keyboard</a></li>-->
+<!--											&lt;!&ndash;<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Mouse </a></li>-->
+<!--                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Headset </a></li>&ndash;&gt;-->
 
-										</ul>
+<!--										</ul>-->
 
-									</div>
-									<div class="col-sm-3">
+<!--									</div>-->
+<!--									<div class="col-sm-3">-->
 
-										<ul class="multi-column-dropdown">
-											<li><a href="gaminggear.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Mouse</a></li>
-											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Headset</a></li>
-											<!--<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Personal Hygiene</a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>-->
+<!--										<ul class="multi-column-dropdown">-->
+<!--											<li><a href="gaminggear.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Mouse</a></li>-->
+<!--											<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Headset</a></li>-->
+<!--											&lt;!&ndash;<li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Personal Hygiene</a></li>-->
+<!--                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>&ndash;&gt;-->
 
-										</ul>
+<!--										</ul>-->
 
-									</div>
-									<div class="col-sm-3">
+<!--									</div>-->
+<!--									<div class="col-sm-3">-->
 
-										<!--<ul class="multi-column-dropdown">
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Fashion Accessories </a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Grooming Tools</a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shaving Need</a></li>
-                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sanitary Needs</a></li>
+<!--										&lt;!&ndash;<ul class="multi-column-dropdown">-->
+<!--                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Fashion Accessories </a></li>-->
+<!--                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Grooming Tools</a></li>-->
+<!--                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shaving Need</a></li>-->
+<!--                                            <li><a href="gaminggear.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sanitary Needs</a></li>-->
 
-                                        </ul>-->
-									</div>
-									<div class="col-sm-3 w3l">
-										<a href="gaminggear.html"><img th:src="@{images/me1.png}" class="img-responsive" alt=""></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Console<b class="caret"></b></span></a>
-							<ul class="dropdown-menu multi multi2">
-								<div class="row">
-									<div class="col-sm-3">
-										<ul class="multi-column-dropdown">
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>SONY Play Station 4</a></li>
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>PS4 Controller </a></li>
-											<!--<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Detergents</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Gardening Needs</a></li>-->
+<!--                                        </ul>&ndash;&gt;-->
+<!--									</div>-->
+<!--									<div class="col-sm-3 w3l">-->
+<!--										<a href="gaminggear.html"><img th:src="@{images/me1.png}" class="img-responsive" alt=""></a>-->
+<!--									</div>-->
+<!--									<div class="clearfix"></div>-->
+<!--								</div>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="dropdown">-->
+<!--							<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Console<b class="caret"></b></span></a>-->
+<!--							<ul class="dropdown-menu multi multi2">-->
+<!--								<div class="row">-->
+<!--									<div class="col-sm-3">-->
+<!--										<ul class="multi-column-dropdown">-->
+<!--											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>SONY Play Station 4</a></li>-->
+<!--											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>PS4 Controller </a></li>-->
+<!--											&lt;!&ndash;<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Detergents</a></li>-->
+<!--                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Gardening Needs</a></li>&ndash;&gt;-->
 
-										</ul>
+<!--										</ul>-->
 
-									</div>
-									<div class="col-sm-3">
+<!--									</div>-->
+<!--									<div class="col-sm-3">-->
 
-										<ul class="multi-column-dropdown">
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Microsoft XBOX One</a></li>
-											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>XBOX Controller </a></li>
-											<!--<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pet Care</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Plastic Wear</a></li>-->
+<!--										<ul class="multi-column-dropdown">-->
+<!--											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Microsoft XBOX One</a></li>-->
+<!--											<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>XBOX Controller </a></li>-->
+<!--											&lt;!&ndash;<li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pet Care</a></li>-->
+<!--                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Plastic Wear</a></li>&ndash;&gt;-->
 
-										</ul>
+<!--										</ul>-->
 
-									</div>
-									<div class="col-sm-3">
+<!--									</div>-->
+<!--									<div class="col-sm-3">-->
 
-										<!--<ul class="multi-column-dropdown">
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pooja Needs</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Serveware</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>
-                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Festive Decoratives </a></li>
+<!--										&lt;!&ndash;<ul class="multi-column-dropdown">-->
+<!--                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pooja Needs</a></li>-->
+<!--                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Serveware</a></li>-->
+<!--                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>-->
+<!--                                            <li><a href="console.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Festive Decoratives </a></li>-->
 
-                                        </ul>-->
-									</div>
-									<div class="col-sm-3 w3l">
-										<a href="console.html"><img th:src="@{images/me2.png}" class="img-responsive" alt=""></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-						</li>
+<!--                                        </ul>&ndash;&gt;-->
+<!--									</div>-->
+<!--									<div class="col-sm-3 w3l">-->
+<!--										<a href="console.html"><img th:src="@{images/me2.png}" class="img-responsive" alt=""></a>-->
+<!--									</div>-->
+<!--									<div class="clearfix"></div>-->
+<!--								</div>-->
+<!--							</ul>-->
+<!--						</li>-->
 
 						<!--<li><a href="codes.html" class="hyper"> <span>Code</span></a></li>-->
 						<li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
@@ -241,7 +221,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</nav>
 			<div class="cart" >
 
-				<span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+				<a th:href="@{/shoppingcart/view}"><span class="fa fa-shopping-cart my-cart-icon"></span></a>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -261,15 +241,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<a href="pccomponent.html"><img class="first-slide" th:src="@{images/ba.jpg}" alt="First slide"></a>
+			<a href="pccomponent.html"><img class="first-slide" th:src="@{https://mohinhfigure.com/wp-content/uploads/2021/08/banner-6.jpeg}" alt="First slide"></a>
 
 		</div>
 		<div class="item">
-			<a href="gaminggear.html"> <img class="second-slide " th:src="@{images/ba1.jpg}" alt="Second slide"></a>
+			<a href="gaminggear.html"> <img class="second-slide " th:src="@{https://mohinhfigure.com/wp-content/uploads/2021/08/banner-4..jpeg}" alt="Second slide"></a>
 
 		</div>
 		<div class="item">
-			<a href="console.html"><img class="third-slide " th:src="@{images/ba2.jpg}" alt="Third slide"></a>
+			<a href="console.html"><img class="third-slide " th:src="@{https://mohinhfigure.com/wp-content/uploads/2021/08/banner-8.jpeg}" alt="Third slide"></a>
 
 		</div>
 	</div>
@@ -277,35 +257,32 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </div><!-- /.carousel -->
 
 <!--content-->
-<div class="kic-top ">
-	<div class="container ">
-		<div class="kic ">
-			<h3>Top Selling</h3>
-
-		</div>
-		<div class="col-md-4 kic-top1">
-			<a href="single.html">
-				<img th:src="@{images/ki.jpg}" class="img-responsive" alt="">
-			</a>
-			<h6>GIGABYTE Z390 AORUS Xtreme Waterforce LGA1151v2</h6>
-			<p>20,590,000 VND</p>
-		</div>
-		<div class="col-md-4 kic-top1">
-			<a href="single.html">
-				<img th:src="@{images/ki1.jpg}" class="img-responsive" alt="">
-			</a>
-			<h6>ASUS ROG Zenith II Extreme</h6>
-			<p>19,370,000 VND</p>
-		</div>
-		<div class="col-md-4 kic-top1">
-			<a href="single.html">
-				<img th:src="@{images/ki2.jpg}" class="img-responsive" alt="">
-			</a>
-			<h6>MSI MEG Z390 Godlike LGA1151v2</h6>
-			<p>14,790,000 VND</p>
-		</div>
-	</div>
-</div>
+<!--<div class="kic-top ">-->
+<!--	<div class="container ">-->
+<!--		-->
+<!--		<div class="col-md-4 kic-top1">-->
+<!--			<a href="single.html">-->
+<!--				<img th:src="@{images/ki.jpg}" class="img-responsive" alt="">-->
+<!--			</a>-->
+<!--			<h6>GIGABYTE Z390 AORUS Xtreme Waterforce LGA1151v2</h6>-->
+<!--			<p>20,590,000 VND</p>-->
+<!--		</div>-->
+<!--		<div class="col-md-4 kic-top1">-->
+<!--			<a href="single.html">-->
+<!--				<img th:src="@{images/ki1.jpg}" class="img-responsive" alt="">-->
+<!--			</a>-->
+<!--			<h6>ASUS ROG Zenith II Extreme</h6>-->
+<!--			<p>19,370,000 VND</p>-->
+<!--		</div>-->
+<!--		<div class="col-md-4 kic-top1">-->
+<!--			<a href="single.html">-->
+<!--				<img th:src="@{images/ki2.jpg}" class="img-responsive" alt="">-->
+<!--			</a>-->
+<!--			<h6>MSI MEG Z390 Godlike LGA1151v2</h6>-->
+<!--			<p>14,790,000 VND</p>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
 
 <!--content-->
 <div class="product">
@@ -319,268 +296,49 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</div>
 		</div>
 		<div class=" con-w3l agileinf">
-			<div class="col-md-3 pro-1">
+			<div class="col-md-3 pro-1" th:each="product:${productList}">
 				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-						<img th:src="@{images/of.png}" class="img-responsive" alt="">
+					<a th:href="@{/product/chitiet/{idsp}(idsp=${product.idsp})}" >
+						<img th:src="${product.image}" class="img-responsive" alt="anh">
 					</a>
 					<div class="mid-1">
 						<div class="women">
-							<h6><a href="single.html">Intel Core i9 9900K</a> 3.6GHz - 5GHz | 8C - 16T</h6>
+							<h6 th:text="${product.tensp}"> </h6>
 						</div>
 						<div class="mid-2">
-							<p ><label>14,490,000</label><em class="item_price">12,900,000 VND</em></p>
+							<p ><em class="item_price" th:text="${product.price}"></em></p>
 							<div class="block">
 								<div class="starbox small ghosting"> </div>
 							</div>
 							<div class="clearfix"></div>
 						</div>
 						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Intel Core i9 9900K" data-summary="summary 1" data-price="12900000" data-quantity="1" data-image="images/of.png}">Add to Cart</button>
+							<button class="btn btn-danger my-cart-btn my-cart-b" ><a th:href="@{/shoppingcart/add/{id}(id=${product.idsp})}">Add to Cart</a></button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal2" class="offer-img">
-						<img th:src="@{images/of1.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>Intel Core i7 9700K 3.6GHz - 4.9GHz | 8C - 8T</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>11,710,000</label><em class="item_price">9,890,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="2" data-name="Intel Core i7 9700K" data-summary="summary 2" data-price="9890000" data-quantity="1" data-image="images/of1.png}">Add to Cart</button>
-						</div>
+			<div th:if = "${totalPages > 1}">
+				<div class = "row col-sm-10">
+					<div class = "col-sm-2">
+						Total Rows: [[${totalItems}]]
 					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal3" class="offer-img">
-						<img th:src="@{images/of4.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>ROG Strix GeForce RTX 2080 Ti OC 11GB GDDR6</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>39,500,000</label><em class="item_price">36,990,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="ROG Strix GeForce RTX 2080 Ti OC" data-summary="summary 5" data-price="36990000" data-quantity="1" data-image="images/of4.png}">Add to Cart</button>
-						</div>
+					<div class = "col-sm-1">
+					<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+						<a th:if="${currentPage != i}" th:href="@{'/product'+'/page/' + ${i}}">[[${i}]]</a>
+						<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+					</span>
 					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal4" class="offer-img">
-						<img th:src="@{images/of5.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>MSI RTX 2080TI Gaming X Trio 11GB GDDR6</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>35,990,000</label><em class="item_price">33,990,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="6" data-name="MSI RTX 2080TI Gaming X Trio" data-summary="summary 6" data-price="33990000" data-quantity="1" data-image="images/of5.png}">Add to Cart</button>
-						</div>
+					<div class = "col-sm-1">
+						<a th:if="${currentPage < totalPages}"
+						   th:href="@{'/product'+'/page/' + ${currentPage + 1}}">Next</a>
+						<span th:unless="${currentPage < totalPages}">Next</span>
 					</div>
-				</div>
-			</div>
 
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal5" class="offer-img">
-						<img th:src="@{images/of18.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>ASUS ROG Zenith II Extreme</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>20,000,000</label><em class="item_price">19,370,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="19" data-name="ASUS ROG Zenith II Extreme" data-summary="summary 19" data-price="19370000" data-quantity="1" data-image="images/of18.png}">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal6" class="offer-img">
-						<img th:src="@{images/of19.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>MSI MEG Z390 Godlike LGA1151v2</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>15,000,000</label><em class="item_price">14,790,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="20" data-name="MSI MEG Z390 Godlike" data-summary="summary 20" data-price="14790000" data-quantity="1" data-image="images/of19.png}">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal7" class="offer-img">
-						<img th:src="@{images/of30.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>SAMSUNG 970 Evo Plus 1TB M.2 NVMe</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>6,550,000</label><em class="item_price">6,190,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="23" data-name="SAMSUNG 970 Evo Plus 1TB" data-summary="summary 23" data-price="6190000" data-quantity="1" data-image="images/of30.png}">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal8" class="offer-img">
-						<img th:src="@{images/of31.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>SAMSUNG 970 Pro 512GB M.2 NVMe</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>5,000,000</label><em class="item_price">4,350,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="SAMSUNG 970 Pro 512GB" data-summary="summary 24" data-price="4350000" data-quantity="1" data-image="images/of31.png}">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal9" class="offer-img">
-						<img th:src="@{images/of32.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>(16G DDR4 3600 2x8G) G.SKILL Trident Z Neo</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>5,000,000</label><em class="item_price">4,990,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="25" data-name="(16G DDR4 3600 2x8G) G.SKILL Trident Z Neo" data-summary="summary 25" data-price="4990000" data-quantity="1" data-image="images/of32.png}">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal10" class="offer-img">
-						<img th:src="@{images/of33.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>(16GB DDR4 3200 2x8G) HyperX Fury RGB</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>2,690,000</label><em class="item_price">2,450,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="26" data-name="(16GB DDR4 3200 2x8G) HyperX Fury RGB" data-summary="summary 26" data-price="2450000" data-quantity="1" data-image="images/of33.png}">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal11" class="offer-img">
-						<img th:src="@{images/of34.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>WD Black 4TB SATA3 7200rpm</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>5,200,000</label><em class="item_price">4,930,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="27" data-name="WD Black 4TB" data-summary="summary 27" data-price="4930000" data-quantity="1" data-image="images/of34.png}">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 pro-1">
-				<div class="col-m">
-					<a href="#" data-toggle="modal" data-target="#myModal12" class="offer-img">
-						<img th:src="@{images/of35.png}" class="img-responsive" alt="">
-					</a>
-					<div class="mid-1">
-						<div class="women">
-							<h6>WD Black 1TB SATA3 7200rpm</h6>
-						</div>
-						<div class="mid-2">
-							<p ><label>2,000,000</label><em class="item_price">1,900,000 VND</em></p>
-							<div class="block">
-								<div class="starbox small ghosting"> </div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="add">
-							<button class="btn btn-danger my-cart-btn my-cart-b" data-id="28" data-name="WD Black 1TB" data-summary="summary 28" data-price="1900000" data-quantity="1" data-image="images/of35.png}">Add to Cart</button>
-						</div>
+					<div class="col-sm-1">
+						<a th:if="${currentPage < totalPages}"
+						   th:href="@{'/product'+'/page/' + ${totalPages}}">Last</a>
+						<span th:unless="${currentPage < totalPages}">Last</span>
 					</div>
 				</div>
 			</div>
@@ -593,16 +351,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="container">
 		<div class="col-md-3 footer-grid">
 			<h3>About Us</h3>
-			<p>KT Computer Store - Best place for buying Computer Components and Gaming Gears with a really low price.</p>
+			<p>SHOP MÔ HÌNH</p>
 		</div>
 		<div class="col-md-3 footer-grid ">
 			<h3>Menu</h3>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="pccomponent.html">PC Component</a></li>
-				<li><a href="gaminggear.html">Gaming Gear</a></li>
-				<li><a href="console.html">Console</a></li>
-				<!--<li><a href="codes.html">Short Codes</a></li>-->
+				<li><a th:href="@{/view}">Home</a></li>
+				<li><a th:href="@{/pccomponent}">Danh mục</a></li>
+
 				<li><a href="contact.html">Contact Us</a></li>
 			</ul>
 		</div>
@@ -628,8 +384,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 		<div class="clearfix"></div>
 		<div class="footer-bottom">
-			<h2 ><a href="index.html"><b>T<br>H<br>E</b>KT Computer Store<span>Best Place For Building Your PC</span></a></h2>
-			<p class="fo-para">KT Computer Store - Best place for buying Computer Components and Gaming Gears with a really low price.</p>
+			<h2 ><a href="index.html">SHOP MÔ HÌNH<span>ĐAM MÊ KHÔNG CHỈ Ở TRÊN MÀN ẢNH</span></a></h2>
+			<p class="fo-para">MÔ HÌNH </p>
 			<ul class="social-fo">
 				<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 				<li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -638,13 +394,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</ul>
 			<div class=" address">
 				<div class="col-md-4 fo-grid1">
-					<p><i class="fa fa-home" aria-hidden="true"></i>Hải Triều, Bến Nghé, Distrct 1, Hồ Chí Minh City.</p>
+					<p><i class="fa fa-home" aria-hidden="true"></i> Distrct 9, Hồ Chí Minh City.</p>
 				</div>
 				<div class="col-md-4 fo-grid1">
-					<p><i class="fa fa-phone" aria-hidden="true"></i>+1234 567 890 , +0919 113 114</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i>+1234 567 890 , +0834 505 170</p>
 				</div>
 				<div class="col-md-4 fo-grid1">
-					<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>KTComputerStore@gmail.com</a></p>
+					<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>mohinh@gmail.com</a></p>
 				</div>
 				<div class="clearfix"></div>
 
@@ -653,7 +409,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 </div>
 <!-- //footer-->
-
 <!-- smooth scrolling -->
 <script type="text/javascript">
 		$(document).ready(function() {
@@ -671,9 +426,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //smooth scrolling -->
 <!-- for bootstrap working -->
-<script th:src="@{js/bootstrap.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
 <!-- //for bootstrap working -->
-<script type='text/javascript' th:src="@{js/jquery.mycart.js}"></script>
+<script type='text/javascript' th:src="@{/js/jquery.mycart.js}"></script>
 <script type="text/javascript">
   $(function () {
 
